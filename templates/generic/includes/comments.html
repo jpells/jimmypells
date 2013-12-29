@@ -7,8 +7,8 @@
         <script>
             $(function() {
                 $('.reply').click(function() {
-                    $('.reply-form').hide();
-                    $(this).next('.reply-form').toggle();
+                    $('.comment-reply-form').hide();
+                    $(this).next('.comment-reply-form').toggle();
                 });
             });
         </script>
@@ -17,9 +17,9 @@
         <h3><span class="orange">{% trans "New Comment" %}</span></h3>
         <form method="post" id="comment" action="{{ comment_url }}#comment">
             {% if not request.POST.replied_to %}
-            {% fields_for posted_comment_form %}
+                {% fields_for posted_comment_form %}
             {% else %}
-            {% fields_for unposted_comment_form %}
+                {% fields_for unposted_comment_form %}
             {% endif %}
             <div class="form-actions">
                 <input class="btn btn-primary btn-large" type="submit" value="{% trans "Comment" %}">
