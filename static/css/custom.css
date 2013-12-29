@@ -1,0 +1,251 @@
+/* MAIN */
+body {
+    background: #000;
+    padding-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#background {
+    background: url(../images/body_bg2.jpg) no-repeat top center;
+    background-attachment: fixed;
+    /* the following is a hack job... */
+    /*min-width: 1280px;*/
+    /*width: 1280px;
+    margin-left: auto;
+    margin-right: auto;*/
+}
+
+#wrapper {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(../images/col_bak.png) repeat top left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* MISC */
+.orange {
+    font-weight: normal;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 100%;
+    color: #e38a17;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.top {
+    text-align: right;
+    margin: 30px 0 0 0;
+}
+
+.top a {
+    display: block;
+    background: url(../images/top.png) no-repeat center right;
+    padding: 10px 35px;
+}
+
+img {
+    box-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #ebebeb;
+}
+
+a {
+    color: #ebebeb;
+    font-size: inherit;
+}
+
+/* NAVIGATION */
+.span3 {
+    color: #ebebeb;
+    float: right;
+}
+
+.panel {
+    border: none;
+    background: none;
+}
+
+ul.nav li {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+ul.nav li a {
+    font-size: 180%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #ebebeb;
+    padding: 20px 65px 10px 65px;
+    border-top: 1px dotted #e38a17;
+    display: block;
+}
+
+#tree-menu-- a {
+    border-top: none;
+    background: url(../images/home.png) no-repeat center left;
+}
+
+#tree-menu-contact a {
+    background: url(../images/contact.png) no-repeat center left;
+}
+
+#tree-menu-blog a {
+    background: url(../images/blog.png) no-repeat center left;
+}
+
+/* CONTENT */
+.span8 {
+    color: #ebebeb;
+    width: 583px;
+}
+
+.span8 a:hover {
+    color: #e38a17;
+}
+
+/* HOME */
+.site, #end {
+    border-top: 1px dotted #e38a17;
+    margin: 20px 0 0 0;
+    padding-top: 20px;
+    width: 583px;
+}
+
+/* CONTACT */
+.form-actions {
+    background: inherit;
+    background-color: inherit;
+    border-top: 1px dotted #e38a17;
+}
+
+.btn-primary {
+    background-color: #e38a17;
+    background-image: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #e38a17;
+}
+
+.control-label {
+    color: #e38a17;
+}
+
+/* BLOG */
+.blog-list-detail {
+    border-bottom: 1px dotted #e38a17;
+}
+
+.blog-list-detail-end {
+    border-bottom: none;
+}
+
+h2 a, h6 a, .blog-list-detail a, .blog-list-detail-end a {
+    color: #e38a17;
+}
+
+.pager li a {
+    background-color: #e38a17;
+}
+
+.comment-author {
+    background: inherit !important;
+}
+
+.comment-author a {
+    color: #e38a17;
+}
+
+#comments li {
+    background: none;
+}
+
+.tags a {
+    color: #e38a17;
+}
+
+a.tag {
+    color: #e38a17;
+}
+
+/* BLOG NAVIGATION */
+ul.blognav li h3 {
+    font-size: 180%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #ebebeb;
+    padding: 20px 65px 0px 65px;
+    margin-bottom: 0px;
+    /*border-top: 1px dotted #e38a17;*/
+    display: block;
+}
+
+ul.blognav a {
+    color: #e38a17;
+}
+
+ul.blognav ul {
+    list-style: none;
+    margin-left: 0px;
+    text-align: center;
+}
+
+#tree-menu-blog-archive {
+    border-top: none;
+    background: url(../images/archives.png) no-repeat center left;
+}
+
+#tree-menu-blog-feeds {
+    background: url(../images/feeds.png) no-repeat center left;
+}
+
+/* FOOTER */
+footer {
+    background-color: #111111;
+    margin-top: 0px;
+}
+
+footer div.container {
+    color: #cccccc;
+}
+
+footer p.valid, footer p.cv, footer p.profiles {
+    float: left;
+    width: 195px;
+    padding-left: 57px;
+    margin-right: 57px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: small;
+}
+
+footer p.valid {
+    background: url(../images/valid.gif) no-repeat top left;    
+}
+
+footer p.cv {
+    background: url(../images/request_cv.gif) no-repeat top left;
+}
+
+footer p.profiles {
+    background: url(../images/profiles.gif) no-repeat top left;
+    margin-right: 0;
+    width: 180px;
+}
+
+.standard_link a {
+    color: #e38a17;
+    font: italic 100% Georgia, "Times New Roman", Times, serif;
+    text-decoration: none;
+}
+
+.standard_link a:hover, .standard_link a:active {
+    text-decoration: underline;
+}
