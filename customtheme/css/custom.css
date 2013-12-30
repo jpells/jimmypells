@@ -16,7 +16,7 @@ body {
 }
 
 #wrapper {
-    width: 850px;
+    width: 850px !important;
     margin-left: auto;
     margin-right: auto;
     background: url(../images/col_bak.png) repeat top left;
@@ -63,7 +63,7 @@ a {
 }
 
 /* NAVIGATION */
-.span3 {
+.col-xs-3 {
     color: #ebebeb;
     float: right;
 }
@@ -101,12 +101,12 @@ ul.nav li a {
 }
 
 /* CONTENT */
-.span8 {
+.col-xs-8 {
     color: #ebebeb;
     width: 583px;
 }
 
-.span8 a:hover {
+.col-xs-8 a:hover {
     color: #e38a17;
 }
 
@@ -209,6 +209,7 @@ ul.blognav ul {
 footer {
     background-color: #111111;
     margin-top: 0px;
+    border-top: none;
 }
 
 footer div.container {
