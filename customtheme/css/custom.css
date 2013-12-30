@@ -218,6 +218,7 @@ footer {
 
 footer div.container {
     color: #cccccc;
+    width: 750px;
 }
 
 footer p.valid, footer p.cv, footer p.profiles {
@@ -242,7 +243,6 @@ footer p.cv {
 footer p.profiles {
     background: url(../images/profiles.gif) no-repeat top left;
     margin-right: 0;
-    width: 180px;
 }
 
 .standard_link a {
