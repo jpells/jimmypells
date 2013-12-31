@@ -179,6 +179,10 @@ a.tag {
     color: #e38a17;
 }
 
+.p1 a {
+    color: #e38a17;
+}
+
 /* BLOG NAVIGATION */
 ul.blognav li h3 {
     font-size: 180%;
