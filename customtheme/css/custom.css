@@ -1,6 +1,6 @@
 /* MAIN */
 body {
-    background: #000;
+    background: #000000;
     padding-top: 0px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -124,7 +124,6 @@ ul.nav li a {
 
 /* CONTACT */
 .form-actions {
-    background: inherit;
     background-color: inherit;
     border-top: 1px dotted #e38a17;
 }
@@ -132,6 +131,7 @@ ul.nav li a {
 .btn-primary {
     background-color: #e38a17;
     background-image: none;
+    border-color: #e38a17;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
@@ -251,9 +251,4 @@ footer p.profiles {
 .standard_link a {
     color: #e38a17;
     font: italic 100% Georgia, "Times New Roman", Times, serif;
-    text-decoration: none;
-}
-
-.standard_link a:hover, .standard_link a:active {
-    text-decoration: underline;
 }
