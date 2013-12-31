@@ -184,13 +184,12 @@ a.tag {
 }
 
 /* BLOG NAVIGATION */
-ul.blognav li h3 {
+/*ul.blognav li h3 {
     font-size: 180%;
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #ebebeb;
     padding: 20px 65px 0px 65px;
     margin-bottom: 0px;
-    /*border-top: 1px dotted #e38a17;*/
     display: block;
 }
 
@@ -211,7 +210,7 @@ ul.blognav ul {
 
 #tree-menu-blog-feeds {
     background: url(../images/feeds.png) no-repeat center left;
-}
+}*/
 
 /* FOOTER */
 footer {
