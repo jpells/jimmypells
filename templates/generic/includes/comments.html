@@ -8,7 +8,7 @@
             $(function() {
                 $('.reply').click(function() {
                     $('.comment-reply-form').hide();
-                    $(this).next('.comment-reply-form').toggle();
+                    $(this).siblings('.comment-reply-form').toggle();
                 });
             });
         </script>
@@ -22,7 +22,7 @@
                 {% fields_for unposted_comment_form %}
             {% endif %}
             <div class="form-actions">
-                <input class="btn btn-primary btn-large" type="submit" value="{% trans "Comment" %}">
+                <input class="btn btn-primary btn-lg" type="submit" value="{% trans "Comment" %}">
             </div>
         </form>
     {% endif %}
