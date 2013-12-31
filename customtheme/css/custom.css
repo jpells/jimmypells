@@ -8,23 +8,16 @@ body {
 #background {
     background: url(../images/body_bg2.jpg) no-repeat top center;
     background-attachment: fixed;
-    /* the following is a hack job... */
-    /*min-width: 1280px;*/
-    /*width: 1280px;
-    margin-left: auto;
-    margin-right: auto;*/
+    min-width: 850px;
 }
 
 #wrapper {
-    width: 850px !important;
-    margin-left: auto;
-    margin-right: auto;
+    width: 850px;
     background: url(../images/col_bak.png) repeat top left;
     padding-left: 30px;
     padding-right: 30px;
 }
 
-/* MISC */
 .orange {
     font-weight: normal;
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -36,35 +29,13 @@ body {
     font-style: italic;
 }
 
-.top {
-    text-align: right;
-    margin: 30px 0 0 0;
-}
-
-.top a {
-    display: block;
-    background: url(../images/top.png) no-repeat center right;
-    padding: 10px 35px;
-}
-
-img {
-    box-shadow: none;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-family: Georgia, "Times New Roman", Times, serif;
-    color: #ebebeb;
-}
-
-a {
-    color: #ebebeb;
-    font-size: inherit;
 }
 
 /* NAVIGATION */
 .col-xs-3 {
-    color: #ebebeb;
     float: right;
 }
 
@@ -84,7 +55,6 @@ ul.nav li a {
     color: #ebebeb;
     padding: 20px 65px 10px 65px;
     border-top: 1px dotted #e38a17;
-    display: block;
 }
 
 #tree-menu-- a {
@@ -122,6 +92,15 @@ ul.nav li a {
     width: 583px;
 }
 
+.top {
+    text-align: right;
+}
+
+.top a {
+    background: url(../images/top.png) no-repeat center right;
+    padding: 10px 35px;
+}
+
 /* CONTACT */
 .form-actions {
     background-color: inherit;
@@ -136,6 +115,7 @@ ul.nav li a {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     background-color: #e38a17;
+    border-color: #e38a17;
 }
 
 .control-label {
@@ -157,6 +137,7 @@ h2 a, h6 a, .blog-list-detail a, .blog-list-detail-end a {
 
 .pager li a {
     background-color: #e38a17;
+    color: #ebebeb;
 }
 
 .comment-author {
