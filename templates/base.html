@@ -1,133 +1,165 @@
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-    {% load pages_tags mezzanine_tags i18n future staticfiles %}
-    <head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        {% comment %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endcomment %}
-        <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
-        <meta name="description" content="{% block meta_description %}{% endblock %}">
-        <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
-        <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
-        {% ifinstalled mezzanine.blog %}
-            <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
-            <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
-        {% endifinstalled %}
-        {% compress css %}
-            <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-            <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
-            <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
-            <link rel="stylesheet" href="{% static "css/custom.css" %}">
-            {% if LANGUAGE_BIDI %}
-                <link rel="stylesheet" href="{% static "css/rtl.css" %}">
-            {% endif %}
-            {% ifinstalled cartridge.shop %}
-                <link rel="stylesheet" href="{% static "css/cartridge.css" %}">
-                {% if LANGUAGE_BIDI %}
-                    <link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
-                {% endif %}
-            {% endifinstalled %}
-            {% block extra_css %}{% endblock %}
-        {% endcompress %}
-        {% compress js %}
-            <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
-            <script src="{% static "js/bootstrap.js" %}"></script>
-            {% block extra_js %}{% endblock %}
-        {% endcompress %}
-        <!--[if lt IE 9]>
-            <script src="{% static "js/html5shiv.js" %}"></script>
-            <script src="{% static "js/respond.min.js" %}"></script>
-        <![endif]-->
-        {% block extra_head %}{% endblock %}
-    </head>
-    <body id="{% block body_id %}body{% endblock %}">
-        <div id="background">
-            <div class="container" id="wrapper">
-                <div class="row">
-                    {% comment %}<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-                        <div class="container">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="sr-only">{% trans "Toggle Navigation" %}</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-                                {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}
-                            </div>
-                            <div class="navbar-collapse collapse">
-                                {% search_form "all" %}
-                                {% page_menu "pages/menus/dropdown.html" %}
-                            </div>
-                        </div>
-                    </div>{% endcomment %}
-                    {% nevercache %}
-                        {% if messages %}
-                            <div class="messages">
-                                {% for message in messages %}
-                                    <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                        {{ message }}
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                    {% endnevercache %}
-                    {% comment %}<h1>{% block title %}{% endblock %}</h1>
-                    <ul class="breadcrumb">
-                        {% spaceless %}
-                            {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-                        {% endspaceless %}
-                    </ul>{% endcomment %}
-                    <div class="col-xs-8">
-                        {% if settings.SITE_TAGLINE %}<h1>{{ settings.SITE_TAGLINE|safe }}</h1>{% endif %}
-                        <br/>
-                        <h2><span class="orange">{% block title %}{% endblock %}</span></h2>
-                        {% block main %}{% endblock %}
-                    </div>
-                    <div class="col-xs-3">
-                        {% block left_panel %}
-                            <div class="panel panel-default{% comment %} tree{% endcomment %}">{% page_menu "pages/menus/tree.html" %}</div>
-                        {% endblock %}
-                        {% nevercache %}
-                            {% include "includes/user_panel.html" %}
-                        {% endnevercache %}
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                {% block right_panel %}
-                                    {% ifinstalled mezzanine.twitter %}
-                                        {% include "twitter/tweets.html" %}
-                                    {% endifinstalled %}
-                                {% endblock %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer>
-            <div class="container">
-                {% page_menu "pages/menus/footer.html" %}
-                {% comment %}<div class="row">
-                    <p class="site-info text-center">
-                        {% trans "Powered by" %}
-                        <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
-                        <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
-                        {% trans "and" %}
-                        <a href="http://www.djangoproject.com">Django</a>
-                        <span class="separator">|</span>
-                        {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
-                        {% ifinstalled mezzanine.mobile %}
-                            <span class="separator">|</span>
-                            <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
-                        {% endifinstalled %}
-                    </p>
-                </div>{% endcomment %}
-                <p class="valid">{% trans "Valid" %} <span class="standard_link"><a href="http://validator.w3.org/check?uri=referer" rel="external" target="_blank">XHTML</a></span> {% trans "and" %} <span class="standard_link"><a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external" target="_blank">CSS</a></span><br />{% trans "Proudly powered by" %} <span class="standard_link"><a href="http://mezzanine.jupo.org" target="_blank">Mezzanine</a></span>.</p>
-                <p class="cv">{% trans "If you would like to find out a little more about what I can do, please" %} <span class="standard_link"><a href="/contact/">{% trans "email me here" %}</a></span> {% trans "and request my" %} resum&#233;.</p>
-                <p class="profiles">{% trans "Visit my" %} <span class="standard_link"><a href="http://people.djangoproject.com/jpells/" target="_blank">Django {% trans "profile" %}</a></span><br />{% trans "Visit my" %} <span class="standard_link"><a href="http://www.linkedin.com/in/jamespells" target="_blank">Linkedin {% trans "profile" %}</a></span></p>
-            </div>
-        </footer>
-        {% include "includes/footer_scripts.html" %}
-    </body>
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+<meta name="description" content="{% block meta_description %}{% endblock %}">
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+
+{% ifinstalled mezzanine.blog %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+{% endifinstalled %}
+
+{% compress css %}
+<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+<link rel="stylesheet" href="{% static "css/custom.css" %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/rtl.css" %}">
+{% endif %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
+{% endif %}
+{% endifinstalled %}
+{% block extra_css %}{% endblock %}
+{% endcompress %}
+
+{% compress js %}
+<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+<script src="{% static "js/bootstrap.js" %}"></script>
+{% block extra_js %}{% endblock %}
+{% endcompress %}
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<script src="{% static "js/respond.min.js" %}"></script>
+<![endif]-->
+
+{% block extra_head %}{% endblock %}
+</head>
+
+<body id="{% block body_id %}body{% endblock %}">
+
+{% comment %}<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+    {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}
+</div>
+<div class="navbar-collapse collapse">
+    {% search_form "all" %}
+    {% page_menu "pages/menus/dropdown.html" %}
+</div>
+</div>
+</div>{% endcomment %}
+
+<div id="background">
+<div class="container wrapper">
+
+{% nevercache %}
+{% if messages %}
+<div class="messages">
+{% for message in messages %}
+<div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {{ message }}
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endnevercache %}
+
+{% comment %}<h1>{% block title %}{% endblock %}</h1>
+
+<ul class="breadcrumb">
+{% spaceless %}
+{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+{% endspaceless %}
+</ul>{% endcomment %}
+
+</div>
+
+<div class="container wrapper">
+<div class="row">
+
+{% comment %}<div class="col-md-2 left">
+    {% block left_panel %}
+    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+    {% endblock %}
+</div>{% endcomment %}
+
+{% comment %}<div class="col-md-7 middle">{% endcomment %}
+<div id="main" class="col-xs-8 left">
+    {% comment %}add tagline and page title{% endcomment %}
+    {% if settings.SITE_TAGLINE %}<h1>{{ settings.SITE_TAGLINE|safe }}</h1>{% endif %}
+    <br />
+    <h1><span class="orange">{% block title %}{% endblock %}</span></h1>
+    {% block main %}{% endblock %}
+</div>
+
+{% comment %}<div class="col-md-3 right">{% endcomment %}
+<div id="sidebar" class="col-xs-3 right">
+    {% comment %}move left navigation{% endcomment %}
+    {% block left_panel %}
+    <div class="panel panel-default{% comment %} tree{% endcomment %}">{% page_menu "pages/menus/tree.html" %}</div>
+    {% endblock %}
+    {% nevercache %}
+    {% include "includes/user_panel.html" %}
+    {% endnevercache %}
+    <div class="panel panel-default">
+    <div class="panel-body">
+    {% block right_panel %}
+    {% ifinstalled mezzanine.twitter %}
+    {% include "twitter/tweets.html" %}
+    {% endifinstalled %}
+    {% endblock %}
+    </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>{% comment %}end background{% endcomment %}
+<footer>
+<div class="container">
+{% page_menu "pages/menus/footer.html" %}
+
+<div class="row">
+{% comment %}<p class="site-info text-center">
+    {% trans "Powered by" %}
+    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
+    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
+    {% trans "and" %}
+    <a href="http://www.djangoproject.com">Django</a>
+    <span class="separator">|</span>
+    {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
+    {% ifinstalled mezzanine.mobile %}
+    <span class="separator">|</span>
+    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
+    {% endifinstalled %}
+</p>{% endcomment %}
+{% comment %}add custom footer{% endcomment %}
+<p class="valid">{% trans "Valid" %} <span class="standard_link"><a href="http://validator.w3.org/check?uri=referer" rel="external" target="_blank">XHTML</a></span> {% trans "and" %} <span class="standard_link"><a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external" target="_blank">CSS</a></span><br />{% trans "Proudly powered by" %} <span class="standard_link"><a href="http://mezzanine.jupo.org" target="_blank">Mezzanine</a></span>.</p>
+<p class="cv">{% trans "If you would like to find out a little more about what I can do, please" %} <span class="standard_link"><a href="/contact/">{% trans "email me here" %}</a></span> {% trans "and request my" %} resum&#233;.</p>
+<p class="profiles">{% trans "Visit my" %} <span class="standard_link"><a href="http://people.djangoproject.com/jpells/" target="_blank">Django {% trans "profile" %}</a></span><br />{% trans "Visit my" %} <span class="standard_link"><a href="http://www.linkedin.com/in/jamespells" target="_blank">Linkedin {% trans "profile" %}</a></span></p>
+</div>
+</div>
+</footer>
+
+{% include "includes/footer_scripts.html" %}
+
+</body>
 </html>

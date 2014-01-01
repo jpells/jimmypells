@@ -11,8 +11,8 @@ body {
     min-width: 850px;
 }
 
-#wrapper {
-    width: 850px;
+.wrapper {
+    width: 850px !important;
     background: url(../images/col_bak.png) repeat top left;
     padding-left: 30px;
     padding-right: 30px;
@@ -34,8 +34,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+a {
+    color: #e38a17;
+}
+
 /* NAVIGATION */
-.col-xs-3 {
+#sidebar {
     float: right;
 }
 
@@ -71,12 +75,12 @@ ul.nav li a {
 }
 
 /* CONTENT */
-.col-xs-8 {
+#main {
     color: #ebebeb;
     width: 583px;
 }
 
-.col-xs-8 a:hover {
+#main a:hover {
     color: #e38a17;
 }
 
