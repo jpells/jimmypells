@@ -39,6 +39,10 @@ a {
     color: #e38a17;
 }
 
+a:hover {
+    color: #e38a17;
+}
+
 /* NAVIGATION */
 #sidebar {
     float: right;
@@ -83,10 +87,6 @@ ul.nav li a {
 #main {
     color: #ebebeb;
     width: 583px;
-}
-
-#main a:hover {
-    color: #e38a17;
 }
 
 /* HOME */
