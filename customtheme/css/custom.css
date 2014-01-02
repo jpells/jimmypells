@@ -149,6 +149,10 @@ h2 a, h6 a, .blog-list-detail a, .blog-list-detail-end a {
     color: #ebebeb;
 }
 
+.pager li a:hover {
+    color: #e38a17;
+}
+
 .comment-author {
     background: inherit !important;
 }
