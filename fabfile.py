@@ -1,3 +1,6 @@
+from __future__ import print_function
+from __future__ import unicode_literals
+from future.builtins import input, open
 import os
 import re
 import sys
@@ -27,7 +30,7 @@ if sys.argv[0].split(os.sep)[-1] in ("fab",             # POSIX
         except (KeyError, ValueError):
             raise ImportError
     except (ImportError, AttributeError):
-        print "Aborting, no hosts defined."
+        print("Aborting, no hosts defined.")
         exit()
 
 env.db_pass = conf.get("DB_PASS", None)
@@ -149,9 +152,9 @@ def update_changed_requirements():
 ###########################################
 
 def _print(output):
-    print
-    print output
-    print
+    print()
+    print(output)
+    print()
 
 
 def print_command(command):
@@ -364,10 +367,10 @@ def create():
     # Create virtualenv
     with cd(env.venv_home):
         if exists(env.proj_name):
-            prompt = raw_input("\nVirtualenv exists: %s\nWould you like "
+            prompt = input("\nVirtualenv exists: %s\nWould you like "
                                "to replace it? (yes/no) " % env.proj_name)
             if prompt.lower() != "yes":
-                print "\nAborting!"
+                print("\nAborting!")
                 return False
             remove()
         run("virtualenv %s --distribute" % env.proj_name)
@@ -444,8 +447,8 @@ def remove():
         remote_path = template["remote_path"]
         if exists(remote_path):
             sudo("rm %s" % remote_path)
-    psql("DROP DATABASE %s;" % env.proj_name)
-    psql("DROP USER %s;" % env.proj_name)
+    psql("DROP DATABASE IF EXISTS %s;" % env.proj_name)
+    psql("DROP USER IF EXISTS %s;" % env.proj_name)
 
 
 ##############
@@ -477,10 +480,10 @@ def deploy():
     processes for the project.
     """
     if not exists(env.venv_path):
-        prompt = raw_input("\nVirtualenv doesn't exist: %s\nWould you like "
+        prompt = input("\nVirtualenv doesn't exist: %s\nWould you like "
                            "to create it? (yes/no) " % env.proj_name)
         if prompt.lower() != "yes":
-            print "\nAborting!"
+            print("\nAborting!")
             return False
         create()
     for name in get_templates():

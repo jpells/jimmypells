@@ -1,3 +1,4 @@
+from __future__ import absolute_import, unicode_literals
 
 ######################
 # MEZZANINE SETTINGS #
@@ -87,9 +88,17 @@ USE_SOUTH = True
 # In the format (('Full Name', 'email@example.com'),
 #                ('Full Name', 'anotheremail@example.com'))
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('James Pells', 'jimmy@jamespells.com'),
 )
 MANAGERS = ADMINS
+
+# Hosts/domain names that are valid for this site; required if DEBUG is False
+# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '.jamespells.com',
+    '.jameshenrypellsiv.com',
+]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -98,7 +107,7 @@ MANAGERS = ADMINS
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = None
+TIME_ZONE = "America/New_York"
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
@@ -106,6 +115,12 @@ USE_TZ = True
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = "en"
+
+# Supported languages
+_ = lambda s: s
+LANGUAGES = (
+    ('en', _('English')),
+)
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
@@ -120,10 +135,6 @@ SITE_ID = 1
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = False
-
-# Make these unique, and don't share it with anybody.
-SECRET_KEY = "de5285b8-f694-4911-9b0a-1bdac6054c3cea54f691-1f72-4725-848d-1c510190555961123d8b-6b31-4415-b91f-4be6b944c4f3"
-NEVERCACHE_KEY = "d61e055b-1edf-4ec8-a4ba-60a48cf1481b3dc08fc0-33a2-4628-91c5-ab91cfee978dbfd0c945-2192-4ee6-8d30-f05695e4aad7"
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
@@ -148,7 +159,7 @@ STATICFILES_FINDERS = (
 
 # The numeric mode to set newly-uploaded files to. The value should be
 # a mode you'd pass directly to os.chmod.
-FILE_UPLOAD_PERMISSIONS = 0644
+FILE_UPLOAD_PERMISSIONS = 0o644
 
 
 #############
@@ -225,6 +236,7 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
 INSTALLED_APPS = (
     "customtheme",
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -267,6 +279,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 MIDDLEWARE_CLASSES = (
     "mezzanine.core.middleware.UpdateCacheMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
