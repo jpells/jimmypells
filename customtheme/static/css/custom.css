@@ -246,3 +246,12 @@ footer p.profiles {
     color: #e38a17;
     font: italic 100% Georgia, "Times New Roman", Times, serif;
 }
+
+.pagination > li > span, .pagination > .disabled > a, .pagination > li > a, .pagination > li > span:hover, .pagination > .disabled > a:hover {
+    background-color: transparent;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover {
+    background-color: #e38a17;
+    border-color: #e38a17;
+}
