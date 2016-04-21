@@ -43,6 +43,10 @@ a:hover {
     color: #e38a17;
 }
 
+pre {
+	font-size: 11px;
+}
+
 /* NAVIGATION */
 #sidebar {
     float: right;

@@ -256,6 +256,8 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
+
+    "mezzanine_pagedown",
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -340,6 +342,15 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #     "SECRET_KEY": SECRET_KEY,
 #     "NEVERCACHE_KEY": NEVERCACHE_KEY,
 # }
+
+
+###############################
+# MEZZANINE PAGEDOWN SETTINGS #
+###############################
+
+RICHTEXT_WIDGET_CLASS = "mezzanine_pagedown.widgets.PageDownWidget"
+RICHTEXT_FILTERS = ["mezzanine_pagedown.filters.codehilite",]
+RICHTEXT_FILTER_LEVEL = 3
 
 
 ##################
