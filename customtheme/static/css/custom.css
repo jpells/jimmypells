@@ -234,7 +234,7 @@ footer p.valid, footer p.cv, footer p.profiles {
 }
 
 footer p.valid {
-    background: url(../images/valid.gif) no-repeat top left;    
+    background: url(../images/valid.gif) no-repeat top left;
 }
 
 footer p.cv {
@@ -253,9 +253,14 @@ footer p.profiles {
 
 .pagination > li > span, .pagination > .disabled > a, .pagination > li > a, .pagination > li > span:hover, .pagination > .disabled > a:hover {
     background-color: transparent;
+    color: #ffffff;
 }
 
 .pagination > .active > a, .pagination > .active > a:hover {
     background-color: #e38a17;
     border-color: #e38a17;
+}
+
+.pagination > li > a:hover {
+    color: #e38a17 !important;
 }
