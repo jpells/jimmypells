@@ -1,4 +1,4 @@
-/* MAIN */
+/* CUSTOMIZATIONS */
 body {
     background: #000000;
     padding-top: 0px;
@@ -235,14 +235,17 @@ footer p.valid, footer p.cv, footer p.profiles {
 
 footer p.valid {
     background: url(../images/valid.gif) no-repeat top left;
+    min-height: 40px;
 }
 
 footer p.cv {
     background: url(../images/request_cv.gif) no-repeat top left;
+    min-height: 40px;
 }
 
 footer p.profiles {
     background: url(../images/profiles.gif) no-repeat top left;
+    min-height: 40px;
     margin-right: 0;
 }
 

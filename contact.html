@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="">
+<meta name="description" content="A little bit about myself...Hi, my name is James Pells and I like to build software application. I&#39;ve built a few, I&#39;d like to build some more, and that&#39;s where you come in. Below are a few of the projects I&#39;ve worked on.">
+<title>Contact | James Pells' Portfolio</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="js/contact.js"></script>
+</head>
+<body id="body">
+<div id="background">
+  <div class="container wrapper"></div>
+  <div class="container wrapper">
+    <div class="row">
+      <div id="main" class="col-xs-8 left">
+          <h1>Well <span class="orange">hello there</span>!...have a look around my web portfolio...</h1>
+          <br>
+          <h1><span class="orange">&nbsp;</span></h1>
+          <p>Fill in the form below to get in touch with me.</p>
+          <form id="contact-form" method="post">
+            <div class="form-group charfield">
+              <label class="control-label" for="name">Name</label>
+              <input id="name" maxlength="2000" name="name" type="text" required="">
+              <p class="help-block">required</p>
+            </div>
+            <div class="form-group emailfield">
+              <label class="control-label" for="email">Email</label>
+              <input id="email" maxlength="2000" name="email" type="email" required="">
+              <p class="help-block">required</p>
+            </div>
+            <div class="form-group charfield">
+              <label class="control-label" for="message">Message</label>
+              <textarea cols="40" id="message" maxlength="2000" name="message" rows="10" required=""></textarea>
+              <p class="help-block">required</p>
+            </div>
+            <div class="form-actions">
+              <input class="btn btn-primary btn-lg" type="button" value="Submit" onClick="submitToAPI(event)">
+            </div>
+          </form>
+      </div>
+      <div id="sidebar" class="col-xs-3 right">
+          <div class="panel panel-default">
+            <ul class="nav nav-list navlist-menu-level-0">
+              <li class="" id="tree-menu--"><a href="index.html">Home</a></li>
+              <li class="active active-branch" id="tree-menu-contact"><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="panel panel-default user-panel">
+            <div class="panel-body">
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-body">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <p class="valid">Valid <span class="standard_link"><a href="https://validator.w3.org/check?uri=referer" rel="external" target="_blank">XHTML</a><br></span></p>
+        <p class="cv">If you would like to find out a little more about what I can do, please <span class="standard_link"><a href="contact.html">email me here</a></span> and request my resumé.</p>
+        <p class="profiles">Visit my:<br><span class="standard_link"><a href="https://github.com/jpells" target="_blank">Github profile</a></span><br><span class="standard_link"><a href="https://bitbucket.org/jpells" target="_blank">Bitbucket profile</a></span><br><span class="standard_link"><a href="https://www.linkedin.com/in/jamespells" target="_blank">Linkedin profile</a></span></p>
+    </div>
+  </div>
+</div>
+</footer>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-46756152-1', 'auto');
+ga('send', 'pageview');
+</script>
+</body>
+</html>
