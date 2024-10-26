@@ -21,7 +21,27 @@ const projects = [
         "url": "https://www.mysql.com",
       },
     ],
-    "summary": "As one of the leading Cannabis & Hemp Testing companies, SC Labs requires a custom LIMS (Laboratory Information Management System) which maximizes efficiency in their Laboratories to deliver accurate and consistent results through their Client Service Portal.",
+    "summary": "Developed a custom Laboratory Information Management System (LIMS) for SC Labs, a leader in cannabis and hemp testing, to optimize lab workflows and ensure accurate, consistent results. This system, integrated with the Client Service Portal, enhanced operational efficiency and improved client access to testing data.",
+  },
+  {
+    "title": "Trinety Net Lease",
+    "url": "https://www.trinety.com",
+    "image": "assets/images/projects/trinety.png",
+    "technologies": [
+      {
+        "name": "Django",
+        "url": "https://www.djangoproject.com",
+      },
+      {
+        "name": "PostgreSQL",
+        "url": "https://www.postgresql.org",
+      },
+      {
+        "name": "htmx",
+        "url": "https://htmx.org",
+      },
+    ],
+    "summary": "Designed and implemented a custom solution for Trinety, a premier online platform for net lease investment real estate, enabling users to seamlessly integrate bank records, track loan payments and rent collection, and gain real-time financial oversight.",
   },
   {
     "title": "SAR Enterprises",
@@ -41,7 +61,7 @@ const projects = [
         "url": "https://www.mysql.com",
       },
     ],
-    "summary": "SAR Enterprises needed an application for their Clients to track Tenant's rent & Loan amortization schedules and ensure they were staying on track.",
+    "summary": "Created an intuitive application for SAR Enterprises that simplifies rent and loan amortization schedule monitoring for tenants, improving payment compliance and financial management for their properties.",
   },
   {
     "title": "Stella & Dot",
@@ -57,7 +77,7 @@ const projects = [
         "url": "https://www.mysql.com",
       },
     ],
-    "summary": "Stella & Dot wanted to update and evolve their new B2C eCommerce shop by adding a \"Stylist Lounge\" to provide individual stylists with easily accessible marketing materials and business supplies.",
+    "summary": "Enhanced the Stella & Dot B2C eCommerce platform by developing a 'Stylist Lounge', providing individual stylists with easy access to marketing materials and business resources, thereby improving customer engagement.",
   },
   {
     "title": "FoxConnect",
@@ -73,7 +93,7 @@ const projects = [
         "url": "https://www.mysql.com",
       },
     ],
-    "summary": "Fox required a revamped image for their online store that integrated into their inventory systems to sell DVDs to an online audience.",
+    "summary": "Redesigned the FoxConnect online storefront to align with their inventory systems, enabling direct-to-consumer DVD sales and supporting a streamlined digital-to-physical distribution strategy.",
   },
   {
     "title": "Cycling Sports Group",
@@ -93,7 +113,7 @@ const projects = [
         "url": "https://www.mysql.com",
       },
     ],
-    "summary": "Cycling Sports Group wanted to create a new interactive environment for cycling fans to have an inside look into their featured riders including strong imagery and brand messaging.",
+    "summary": "Developed an interactive online experience for Cycling Sports Group, featuring rider profiles, dynamic imagery, and brand storytelling to strengthen customer engagement and elevate the brand.",
   },
   {
     "title": "Harbor Freight Tools",
@@ -109,6 +129,6 @@ const projects = [
         "url": "https://www.mysql.com",
       },
     ],
-    "summary": "Harbor Freight needed to upgrade their Magento implementation to take advantage of some of the newer features; this grew into a rewrite due to the many customizations they had made to Magento over the years.",
+    "summary": "Led the modernization of Harbor Freight Tools' heavily customized Magento implementation, including a major platform upgrade and a complete rebuild, to improve functionality, scalability, and performance.",
   },
 ];
