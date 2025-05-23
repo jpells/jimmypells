@@ -1,6 +1,14 @@
+const pageLoadTime = Date.now();
 const contactForm = document.getElementById("contact-form");
+
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  const elapsed = Date.now() - pageLoadTime;
+  if (elapsed < 3000) {
+    // Can you submit the form in less than 3 seconds?
+    return;
+  }
 
   const successMessage = document.getElementById("contact-form-success");
   const errorMessage = document.getElementById("contact-form-error");
