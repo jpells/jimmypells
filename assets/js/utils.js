@@ -7,6 +7,7 @@ const toOxfordComma = (array) =>
           .concat(`and ${array.slice(-1)}`)
           .join(", ")
       : array.join(", ");
+// biome-ignore lint/correctness/noUnusedVariables: getProjectTechnology is used in HTML via Alpine.js
 const getProjectTechnology = (project) =>
   toOxfordComma(
     project.technologies.map(
@@ -14,4 +15,5 @@ const getProjectTechnology = (project) =>
         `<a href="${technology.url}" class="hover:underline" target="_blank">${technology.name}</a>`,
     ),
   );
-const zeroFilled = (n) => ("0" + n).slice(-1);
+// biome-ignore lint/correctness/noUnusedVariables: zeroFilled is used in HTML via Alpine.js
+const zeroFilled = (n) => `0${n}`.slice(-1);

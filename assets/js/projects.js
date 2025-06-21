@@ -1,3 +1,4 @@
+// biome-ignore lint/correctness/noUnusedVariables: projects is used in HTML via Alpine.js
 const projects = [
   {
     title: "SC Labs",
