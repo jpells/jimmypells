@@ -10,6 +10,12 @@ contactForm.addEventListener("submit", (e) => {
     return;
   }
 
+  const website = document.getElementById("website").value;
+  if (website) {
+    // Honey do not!
+    return;
+  }
+
   const successMessage = document.getElementById("contact-form-success");
   const errorMessage = document.getElementById("contact-form-error");
   successMessage.classList.add("hidden");
