@@ -27,7 +27,7 @@ contactForm.addEventListener("submit", (e) => {
     message: `Name: ${document.getElementById("name").value}\nEmail: ${document.getElementById("email").value}\nMessage: ${document.getElementById("message").value}`,
   };
 
-  let request = new XMLHttpRequest();
+  const request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState === 4) {
       if (this.status === 200) {
