@@ -81,8 +81,9 @@
             </div>
           </div>
           <div class="md:items-center">
-            <input class="px-20 py-3 mb-4 font-medium text-gray-700 transition duration-500 ease-linear bg-white rounded-md md:px-24 md:py-4 md:font-semibold text-md hover:bg-gray-700 hover:text-white" type="submit" value="Send">
+            <input type="hidden" name="token" id="token">
             <input type="text" name="website" id="website" style="display: none;" tabindex="-1" autocomplete="off">
+            <input class="px-20 py-3 mb-4 font-medium text-gray-700 transition duration-500 ease-linear bg-white rounded-md md:px-24 md:py-4 md:font-semibold text-md hover:bg-gray-700 hover:text-white" type="submit" value="Send">
           </div>
           <div class="hidden italic text-green-600" id="contact-form-success">Thanks for getting in touch with me. I will get back to you as soon as possible.</div>
           <div class="hidden italic text-red-500" id="contact-form-error">An error has occurred, please try again later.</div>
