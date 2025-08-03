@@ -12,7 +12,7 @@ document.addEventListener("keypress", () => userInteractionCount++);
 document.addEventListener("click", () => userInteractionCount++);
 
 const contactForm = document.getElementById("contact-form");
-contactForm.addEventListener("submit", (e) => {
+contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   if (document.getElementById("token").value !== sessionToken) {
@@ -36,9 +36,24 @@ contactForm.addEventListener("submit", (e) => {
   errorMessage.classList.add("hidden");
   errorMessage.textContent = "";
 
+  let recaptchaResponse;
+  try {
+    // Validate reCAPTCHA
+    const recaptchaSiteKey = "6Lept5grAAAAAL_t6IKTDCJBiigne_gUmkqGAMkC";
+    recaptchaResponse = await grecaptcha.execute(recaptchaSiteKey, {
+      action: "contact_form",
+    });
+  } catch (error) {
+    console.error("reCAPTCHA error:", error);
+    errorMessage.textContent = "An error has occurred, please try again later.";
+    errorMessage.classList.remove("hidden");
+    return;
+  }
+
   const data = {
     subject: "[Jimmy Pells] Contact Form",
     message: `Name: ${document.getElementById("name").value}\nEmail: ${document.getElementById("email").value}\nMessage: ${document.getElementById("message").value}`,
+    recaptchaResponse: recaptchaResponse,
   };
 
   const request = new XMLHttpRequest();
